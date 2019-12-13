@@ -2,7 +2,7 @@ import math
 import numpy as np
 from matplotlib import pyplot as plt
 from PIL import Image
-
+import cv2
 
 threshold_values = {}
 h = [1]
@@ -107,7 +107,7 @@ def get_optimal_threshold():
     return optimal_threshold[0]
 
 
-image = Image.open('img.jpg').convert("L")
+image = Image.open('../Dataset/Test/test.jpg').convert("L")
 img = np.asarray(image)
 
 h = Hist(img)
@@ -116,4 +116,4 @@ op_thres = get_optimal_threshold()
 
 res = regenerate_img(img, op_thres)
 plt.imshow(res)
-plt.savefig("otsu.jpg")
+plt.savefig("../Result/Test/otsu.jpg")
