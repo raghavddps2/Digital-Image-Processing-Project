@@ -107,7 +107,7 @@ def get_optimal_threshold():
     return optimal_threshold[0]
 
 
-image = Image.open('../Dataset/Test/test.jpg').convert("L")
+image = Image.open('../Dataset/Test/img.jpg').convert("L")
 img = np.asarray(image)
 
 h = Hist(img)
