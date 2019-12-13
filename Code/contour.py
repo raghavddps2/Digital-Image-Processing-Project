@@ -1,3 +1,11 @@
+#Before starting we should know what is countour exactly.
+'''
+Contours can be explained simply as a curve joining all the continuous points (along the boundary),
+ having same color or intensity. 
+ The contours are a useful tool for shape analysis and 
+ object detection and recognition. 
+ For better accuracy, use binary images.
+'''
 
 # import the necessary packages
 from skimage.feature import peak_local_max
@@ -35,7 +43,7 @@ localMax = peak_local_max(D, indices=False, min_distance=20,
 	labels=thresh)
 
 # perform a connected component analysis on the local peaks,
-# using 8-connectivity, then appy the Watershed algorithm
+# using 8-connectivity, then appy the Watershed algorithm with active countors.
 markers = ndimage.label(localMax, structure=np.ones((3, 3)))[0]
 labels = watershed(-D, markers, mask=thresh)
 print("[INFO] {} unique segments found".format(len(np.unique(labels)) - 1))
@@ -62,8 +70,8 @@ for label in np.unique(labels):
 	# draw a circle enclosing the object
 	((x, y), r) = cv2.minEnclosingCircle(c)
 	cv2.circle(image, (int(x), int(y)), int(r), (0, 255, 0), 2)
-	cv2.putText(image, "#{}".format(label), (int(x) - 10, int(y)),
-		cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 0, 255), 2)
+	# cv2.putText(image, "#{}".format(label), (int(x) - 10, int(y)),
+	# 	cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 0, 255), 2)
 
 # show the output image
 cv2.imshow("Output", image)

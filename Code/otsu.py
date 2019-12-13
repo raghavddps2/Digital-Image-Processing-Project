@@ -10,6 +10,7 @@ h = [1]
 
 def Hist(img):
    row, col = img.shape 
+   print(row,col)  #This comes out to be 311 X 569.
    y = np.zeros(256)
    for i in range(0,row):
       for j in range(0,col):

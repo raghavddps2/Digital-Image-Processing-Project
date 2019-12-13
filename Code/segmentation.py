@@ -2,6 +2,8 @@ import cv2 as cv
 import matplotlib.pyplot as plt
 import numpy as np
 
+
+# This is simply converting it to grayscale and applying the Otsu's thresholding.
 img = cv.imread("../Dataset/Test/img.jpg",1)
 gray = cv.cvtColor(img,cv.COLOR_BGR2GRAY)
 th1 = 0
