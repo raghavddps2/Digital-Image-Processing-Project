@@ -13,5 +13,4 @@ gt = np.asarray(seg)
 
 dice = np.sum(seg[gt==k])*2.0 / (np.sum(seg) + np.sum(gt))
 
-print("Dice similarity score is {}".format(dice))
-print("Accuracy: ",((100-dice)/2)*1.5)
+# print("Dice similarity score is {}".format(dice))

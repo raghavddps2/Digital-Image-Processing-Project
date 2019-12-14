@@ -53,7 +53,7 @@ print("[INFO] {} unique segments found".format(len(np.unique(labels)) - 1))
 for label in np.unique(labels):
 	# if the label is zero, we are examining the 'background'
 	# so simply ignore it
-	if label == 0 or label%2 == 0:
+	if label == 0:
 		continue
 
 	# otherwise, allocate memory for the label region and draw
@@ -75,5 +75,5 @@ for label in np.unique(labels):
 
 # show the output image
 cv2.imshow("Output", image)
-cv2.imwrite("../Result/Test/contour.jpg",image)
+cv2.imwrite("../Result/Test/contour.jpg",image)                      n    nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb bnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn                            nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb bnnbbbbbbbbbbbbbbbbbbbbbbnbnnb bnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnbnnnnnnnnnnnnnnnnnnbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb bn bn                                                                                          b
 cv2.waitKey(0)
